@@ -20,8 +20,8 @@ const NavBar = () => {
 
   <nav className="flex items-center gap-6">
     <NavLinks className='font-bold hover:text-blue-600' href="/">Home</NavLinks>
-    <NavLinks className='font-bold hover:text-blue-600' href="courses">Courses</NavLinks>
-    <NavLinks className='font-bold hover:text-blue-600' href="profile">My Profile</NavLinks>
+    <NavLinks className='font-bold hover:text-blue-600' href="/courses">Courses</NavLinks>
+    <NavLinks className='font-bold hover:text-blue-600' href="/profile">My Profile</NavLinks>
   </nav>
 
   <div className="flex items-center gap-3">

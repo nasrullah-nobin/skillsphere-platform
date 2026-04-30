@@ -2,6 +2,7 @@ import { Button } from "@heroui/react";
 import Image from "next/image";
 import { BiCategory } from "react-icons/bi";
 import { getCourses } from "./dataFetch";
+import Link from "next/link";
 
 export const PopularCourses = async () => {
   const courses = await getCourses();
@@ -29,7 +30,9 @@ export const PopularCourses = async () => {
               <h5 className="font-bold mt-3">{course.title}</h5>
               <p>{course.instructor}</p>
               <p className="text-yellow-500">⭐ {course.rating}</p>
+              <Link href={`/courses//${course.id}`}>
               <Button className="mt-3 w-full">View Details</Button>
+              </Link>
             </div>
           ))}
         </div>
