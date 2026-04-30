@@ -9,7 +9,7 @@ import NavLinks from './NavLinks';
 const NavBar = () => {
   
     return (
-       <header className="flex items-center justify-between px-6 py-3 border-b sticky top-0 bg-white z-50">
+       <header className="flex items-center justify-between px-6 py-3 border-b sticky top-0 bg-linear-to-br from-[#DFDCFD] to-[#D4EDED] z-50">
 <Image 
   src={logo} 
   alt="logo" 
