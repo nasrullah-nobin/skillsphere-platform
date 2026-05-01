@@ -8,6 +8,8 @@ import {
   Input,
   Label,
   TextField,
+  ListBox,
+  Select,
 } from "@heroui/react";
 import Image from "next/image";
 import { authClient } from "../../lib/auth-client";
@@ -31,12 +33,14 @@ const RegisterPage = () => {
       const email = formData.get("email");
       const password = formData.get("password");
       const image = formData.get("url");
-
+      const role = formData.get("role");
+console.log(role)
       const { data, error } = await authClient.signUp.email({
         name,
         email,
         password,
         image,
+        role,
       });
 
       if (data) {
@@ -54,13 +58,12 @@ const RegisterPage = () => {
     }
   };
 
+  const handleGoogleSignUp = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
 
-  const handleGoogleSignUp=async()=> {
-     const data = await authClient.signIn.social({
-    provider: "google",
-  });
-  }
-  
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-purple-100 px-4">
       <div className="w-full max-w-md my-10 bg-white p-8 rounded-2xl shadow-lg">
@@ -77,6 +80,49 @@ const RegisterPage = () => {
             <Input placeholder="Write your name" name="name" />
             <FieldError />
           </TextField>
+
+          <Select name="role" placeholder="Select your role">
+            <Label>Role</Label>
+
+            <Select.Trigger>
+              <Select.Value />
+              <Select.Indicator />
+            </Select.Trigger>
+
+            <Select.Popover>
+              <ListBox>
+                <ListBox.Item id="student" textValue="Student">
+                  Student 🎓
+                  <ListBox.ItemIndicator />
+                </ListBox.Item>
+
+                <ListBox.Item id="instructor" textValue="Instructor">
+                  Instructor 👨‍🏫
+                  <ListBox.ItemIndicator />
+                </ListBox.Item>
+
+                <ListBox.Item id="mentor" textValue="Mentor">
+                  Mentor 🧠
+                  <ListBox.ItemIndicator />
+                </ListBox.Item>
+
+                <ListBox.Item id="developer" textValue="Developer">
+                  Developer 💻
+                  <ListBox.ItemIndicator />
+                </ListBox.Item>
+
+                <ListBox.Item id="freelancer" textValue="Freelancer">
+                  Freelancer 🌐
+                  <ListBox.ItemIndicator />
+                </ListBox.Item>
+
+                <ListBox.Item id="job-seeker" textValue="Job Seeker">
+                  Job Seeker 🔍
+                  <ListBox.ItemIndicator />
+                </ListBox.Item>
+              </ListBox>
+            </Select.Popover>
+          </Select>
 
           <TextField isRequired type="url">
             <Label>Image URL</Label>
@@ -140,7 +186,10 @@ const RegisterPage = () => {
           <div className="flex-1 h-px bg-gray-200"></div>
         </div>
 
-        <button onClick={handleGoogleSignUp} className="w-full flex items-center justify-center gap-2 border py-2 rounded-lg hover:bg-gray-50 transition cursor-pointer">
+        <button
+          onClick={handleGoogleSignUp}
+          className="w-full flex items-center justify-center gap-2 border py-2 rounded-lg hover:bg-gray-50 transition cursor-pointer"
+        >
           <Image
             src="https://www.svgrepo.com/show/475656/google-color.svg"
             alt="google"
