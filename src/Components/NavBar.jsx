@@ -4,6 +4,7 @@ import React from 'react';
 import logo from '@/assets/logo.png'
 import Image from 'next/image';
 import NavLinks from './NavLinks';
+import Link from 'next/link';
 
 
 const NavBar = () => {
@@ -25,7 +26,9 @@ const NavBar = () => {
   </nav>
 
   <div className="flex items-center gap-3">
-    <Button className="font-bold">Login</Button>
+   <Link href={'/login'}> <Button className="font-bold">Login</Button></Link>
+    <Link href={'/register'}><Button className="font-bold">Register</Button></Link>
+
   </div>
 </header>
     );
