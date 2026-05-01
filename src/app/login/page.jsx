@@ -46,7 +46,13 @@ if(error){
    finally{
     setLoading(false)
    }
+
   };
+  const handleGoogleLogin=async()=> {
+    const data = await authClient.signIn.social({
+   provider: "google",
+ });
+ }
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-purple-100 px-4">
       <div className="w-full my-10 max-w-md bg-white p-8 rounded-2xl shadow-lg">
@@ -102,7 +108,7 @@ if(error){
             {loading? 'Login...': 'Login'}
           </Button>
 
-          <Button
+          <Button onClick={handleGoogleLogin}
             variant="secondary"
             className="w-full flex items-center justify-center gap-2 border hover:bg-gray-50 transition"
           >
