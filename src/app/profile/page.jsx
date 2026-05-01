@@ -8,7 +8,7 @@ const ProfileCard = () => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
   const date = user?.createdAt ? new Date(user.createdAt) : null;
-console.log(user.role)
+
   return (
     <div className="flex justify-center items-center min-h-[70vh] my-10 px-4">
       <Card className="w-full max-w-md p-6 rounded-2xl shadow-lg bg-white">

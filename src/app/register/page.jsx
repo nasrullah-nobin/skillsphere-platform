@@ -34,7 +34,7 @@ const RegisterPage = () => {
       const password = formData.get("password");
       const image = formData.get("url");
       const role = formData.get("role");
-console.log(role)
+      
       const { data, error } = await authClient.signUp.email({
         name,
         email,
