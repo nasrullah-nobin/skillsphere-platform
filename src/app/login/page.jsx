@@ -33,14 +33,14 @@ const LoginPage = () => {
 
 
    if (data) {
-  toast.success("Welcome back 👋");
+  toast.success("Welcome back 👋",{position:'top-center'});
   setTimeout(() => {
     router.push('/')
   }, 800);
 }
 
 if(error){
-  toast.warn(error.message)
+  toast.warn(error.message,{position:'top-center'})
 }
    }
    finally{

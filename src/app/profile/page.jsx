@@ -1,14 +1,32 @@
 "use client";
 import Image from "next/image";
-import { Card } from "@heroui/react";
+import {
+  Button,
+  Card,
+  Input,
+  Label,
+  Modal,
+  Surface,
+  TextField,
+} from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
 import { format } from "date-fns";
+import { BiEdit} from "react-icons/bi";
 
 const ProfileCard = () => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
   const date = user?.createdAt ? new Date(user.createdAt) : null;
-
+  
+  const updateUser = async (e) => {
+    const formData = new FormData(e.currentTarget);
+     const name = formData.get("name");
+        const image = formData.get("url");
+    await authClient.updateUser({
+      image,
+      name,
+    });
+  };
   return (
     <div className="flex justify-center items-center min-h-[70vh] my-10 px-4">
       <Card className="w-full max-w-md p-6 rounded-2xl shadow-lg bg-white">
@@ -47,9 +65,44 @@ const ProfileCard = () => {
           </div>
         </div>
 
-        <button className="mt-6 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
-          Edit Profile
-        </button>
+        <Modal>
+          <Button className="mt-6 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+            Edit Profile
+          </Button>
+          <Modal.Backdrop>
+            <Modal.Container placement="auto">
+              <Modal.Dialog className="sm:max-w-md">
+                <Modal.CloseTrigger />
+                <Modal.Header>
+                  <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
+                    <BiEdit className="size-5" />
+                  </Modal.Icon>
+                  <Modal.Heading>Update Your Profile</Modal.Heading>
+                </Modal.Header>
+                <Modal.Body className="p-6">
+                  <Surface variant="default">
+                    <form onSubmit={updateUser} className="flex flex-col gap-4">
+                      <TextField className="w-full" name="name" type="text">
+                        <Label>Name</Label>
+                        <Input placeholder="Enter your name" />
+                      </TextField>
+                      <TextField className="w-full" name="url" type="url">
+                        <Label>Image Url</Label>
+                        <Input placeholder="Paste Your image url" />
+                      </TextField>
+                      <Modal.Footer>
+                        <Button slot="close" variant="secondary">
+                          Cancel
+                        </Button>
+                        <Button type="submit" slot="close">Update</Button>
+                      </Modal.Footer>
+                    </form>
+                  </Surface>
+                </Modal.Body>
+              </Modal.Dialog>
+            </Modal.Container>
+          </Modal.Backdrop>
+        </Modal>
       </Card>
     </div>
   );
