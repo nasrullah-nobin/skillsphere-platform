@@ -29,7 +29,7 @@ const NavBar = () => {
           Home
         </NavLinks>
         <NavLinks className="font-bold hover:text-blue-600" href="/courses">
-          Courses
+         All Courses
         </NavLinks>
         <NavLinks className="font-bold hover:text-blue-600" href="/profile">
           My Profile
