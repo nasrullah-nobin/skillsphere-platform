@@ -18,13 +18,13 @@ export const PopularCourses = async () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
           {filtered.slice(0,3).map((course) => (
-            <div key={course.id} className="border rounded-xl p-4 shadow hover:shadow-lg transition">
+            <div key={course.id} className="border rounded-xl p-4 shadow hover:shadow-lg transition text-center md:text-left">
             <Image
                 src={course.image}
                 alt={course.title}
                 width={400}
                 height={200}
-                className="rounded-lg"
+                className="rounded-lg mx-auto"
               />
               <h5 className="font-bold mt-3">{course.title}</h5>
               <p>{course.instructor}</p>

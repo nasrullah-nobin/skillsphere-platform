@@ -76,83 +76,91 @@ export default function Banner() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                  {slide.title}
-                </h1>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
 
-                <p className="mt-4 text-lg max-w-lg">{slide.desc}</p>
+  <div className="text-center md:text-left">
+    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+      {slide.title}
+    </h1>
 
-                <div className="mt-6 flex gap-4">
-                  <Link
-                    href="/courses"
-                    className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-                  >
-                    Browse Courses
-                  </Link>
+    <p className="mt-4 text-base sm:text-lg max-w-lg mx-auto md:mx-0">
+      {slide.desc}
+    </p>
 
-                  <Link
-                    href="/about"
-                    className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition"
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
+    <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+      <Link
+        href="/courses"
+        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-center"
+      >
+        Browse Courses
+      </Link>
 
-              <div className="flex justify-center">
-                <div className="relative w-125 h-100">
-                
-                  <Image
-                    src={slide.image}
-                    alt="hero"
-                    fill
-                    className="object-cover rounded-2xl shadow-lg"
-                  />
+      <Link
+        href="/about"
+        className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition text-center"
+      >
+        Learn More
+      </Link>
+    </div>
+  </div>
 
-                  
-                  <div className="absolute top-0 -right-8 bg-white shadow-md rounded-xl px-3 py-2 flex items-center gap-2 z-10">
-                    <Image
-                      src={slide.topBadge.image}
-                      alt="mentor"
-                      width={40}
-                      height={40}
-                      className="rounded-full"
-                    />
+  <div className="flex justify-center">
+    <div className="relative w-full max-w-125 h-62.5 sm:h-80 md:h-100">
 
-                    <div>
-                      <h6 className="text-lg font-bold">
-                        {slide.topBadge.count}
-                      </h6>
-                      <p className="text-sm text-gray-600">
-                        {slide.topBadge.title}
-                      </p>
-                    </div>
-                  </div>
+      
+      <Image
+        src={slide.image}
+        alt="hero"
+        fill
+        className="object-cover rounded-2xl shadow-lg"
+      />
 
-                
-                  <div className="absolute bottom-0 -left-8 bg-white shadow-md rounded-xl px-3 py-2 flex items-center gap-2 z-10">
-                    <Image
-                      src={slide.bottomBadge.image}
-                      alt="student"
-                      width={40}
-                      height={40}
-                      className="rounded-full"
-                    />
+     
+      <div className="absolute top-2 right-2 sm:-top-4 md:top-0 sm:-right-4 bg-white shadow-md rounded-xl px-2 sm:px-3 py-2 flex items-center gap-2 z-10">
 
-                    <div>
-                      <h6 className="text-lg font-bold">
-                        {slide.bottomBadge.count}
-                      </h6>
-                      <p className="text-sm text-gray-600">
-                        {slide.bottomBadge.title}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <Image
+          src={slide.topBadge.image}
+          alt="mentor"
+          width={32}
+          height={32}
+          className="rounded-full sm:w-10 sm:h-10"
+        />
+
+        <div>
+          <h6 className="text-sm sm:text-lg font-bold">
+            {slide.topBadge.count}
+          </h6>
+          <p className="text-xs sm:text-sm text-gray-600">
+            {slide.topBadge.title}
+          </p>
+        </div>
+      </div>
+
+     
+      <div className="absolute bottom-2 left-2 sm:-bottom-4 md:bottom-0 sm:-left-4 bg-white shadow-md rounded-xl px-2 sm:px-3 py-2 flex items-center gap-2 z-10">
+
+        <Image
+          src={slide.bottomBadge.image}
+          alt="student"
+          width={32}
+          height={32}
+          className="rounded-full sm:w-10 sm:h-10"
+        />
+
+        <div>
+          <h6 className="text-sm sm:text-lg font-bold">
+            {slide.bottomBadge.count}
+          </h6>
+          <p className="text-xs sm:text-sm text-gray-600">
+            {slide.bottomBadge.title}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
           </SwiperSlide>
         ))}
       </Swiper>
