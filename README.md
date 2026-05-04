@@ -1,36 +1,156 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb)
+![License](https://img.shields.io/badge/license-MIT-blue)
+# 🎓 SkillSphere
 
-## Getting Started
+SkillSphere is a modern online learning platform built with **Next.js**, where users can explore courses, view details, and manage their profiles with authentication.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌍 Live Demo
+
+👉 https://your-live-link.vercel.app
+
+---
+
+## 📸 Screenshot
+
+![Home Page](https://github.com/nasrullah-nobin/skillsphere-platform/blob/main/screencapture-localhost-3000-2026-05-04-08_58_36.png)
+
+---
+
+## 🚀 Features
+
+* 🔐 Authentication (Email + Google)
+* 👤 User Profile with Avatar & Role
+* 📚 Course Listing & Details Page
+* 🔍 Search Functionality
+* 🎞️ Hero Slider using Swiper.js
+* 🎨 Modern UI with HeroUI + Tailwind CSS
+* 🔔 Toast Notifications
+* ⚡ Fast performance using Next.js App Router
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** Next.js 16, React
+* **UI Library:** HeroUI + Tailwind CSS
+* **Authentication:** Better Auth
+* **Database:** MongoDB
+* **Slider:** Swiper.js
+* **Notifications:** React Toastify
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+ ├── app/
+ │   ├── login/
+ │   ├── register/
+ │   ├── profile/
+ │   ├── courses/
+ │
+ ├── components/
+ │   ├── Banner.jsx
+ │   ├── Navbar.jsx
+ │   ├── ProfileCard.jsx
+ │
+ ├── lib/
+ │   ├── auth-client.js
+ │   ├── auth.js
+ │
+ ├── data/
+ │   ├── courses.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🔑 Authentication
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* Email & Password login
+* Google Login (OAuth)
+* Session management
+* Role system (Student, Instructor)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📚 Courses
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* View all courses
+* Course details page
+* Search functionality
+* Category-based organization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 👤 Profile
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* User avatar & name
+* Email display
+* Role system
+* Account creation date
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🎨 UI Highlights
+
+* 📱 Fully responsive design
+* ✨ Smooth animations
+* 🎯 Clean and modern layout
+* 🎞️ Interactive slider with badges
+
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/nasrullah-nobin/skillsphere-platform.git
+cd skillsphere-platform
+npm install
+npm run dev
+```
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env.local` file:
+
+```
+skillsphere=your_mongodb_connection_string
+
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+---
+
+## 🧠 Future Improvements
+
+* 💳 Payment Integration
+* 📈 User Dashboard
+* 🎓 Course Enrollment System
+* ⭐ Reviews & Ratings
+* 📹 Video Lessons
+
+---
+
+## 🤝 Contributing
+
+Feel free to fork this project and submit a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Nobin**
+Aspiring Full Stack Developer 🚀
