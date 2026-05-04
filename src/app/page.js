@@ -3,7 +3,7 @@ import Instructors from "@/Components/Instructors ";
 import LearningTips from "@/Components/LearningTips";
 import { PopularCourses } from "@/Components/PopularCourses";
 import WhyChoose from "@/Components/WhyChoose";
-export const dynamic = 'force-dynamic'
+
 
 export default function Home() {
   return (
