@@ -1,3 +1,4 @@
+'use server'
 export const getCourses = async ()=> {
 const res = await fetch ('https://skillsphere-platform.vercel.app/course.json');
 const data = await res.json();
