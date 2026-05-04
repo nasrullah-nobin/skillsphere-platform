@@ -3,7 +3,7 @@ import Image from "next/image";
 import { BiCategory } from "react-icons/bi";
 import { getCourses } from "./dataFetch";
 import Link from "next/link";
-
+export const dynamic = 'force-dynamic'
 export const PopularCourses = async () => {
   const courses = await getCourses();
   const filtered = courses?.filter(c => c.rating > 4.5) || [];
