@@ -18,6 +18,8 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { useState } from "react";
 
+
+
 const RegisterPage = () => {
   const router = useRouter();
 

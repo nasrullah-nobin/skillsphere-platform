@@ -6,6 +6,52 @@ import { Button } from "@heroui/react";
 import { BiCategory } from "react-icons/bi";
 import CourseSearch from "@/Components/CourseSearch";
 
+
+export const metadata = {
+  title: "All Courses | SkillSphere 📚",
+  description:
+    "Explore all courses on SkillSphere. Learn web development, design, marketing, and data science from expert mentors and build real-world skills.",
+
+  keywords: [
+    "SkillSphere courses",
+    "online courses",
+    "web development",
+    "react courses",
+    "next.js courses",
+    "UI UX design",
+    "digital marketing",
+    "data science",
+    "learn coding online"
+  ],
+
+  openGraph: {
+    title: "Browse All Courses | SkillSphere 📚",
+    description:
+      "Discover top courses across development, design, and marketing. Start learning today with SkillSphere.",
+    url: "https://your-domain.vercel.app/courses",
+    siteName: "SkillSphere",
+    images: [
+      {
+        url: "https://raw.githubusercontent.com/nasrullah-nobin/skillsphere-platform/main/screencapture-localhost-3000-2026-05-04-08_58_36.png",
+        width: 1200,
+        height: 630,
+        alt: "SkillSphere Courses Page",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "All Courses | SkillSphere",
+    description:
+      "Browse and enroll in top courses to upgrade your skills and boost your career.",
+    images: [
+      "https://raw.githubusercontent.com/nasrullah-nobin/skillsphere-platform/main/screencapture-localhost-3000-2026-05-04-08_58_36.png",
+    ],
+  },
+};
 const AllCourses = async ({searchParams}) => {
   
   const courses = await getCourses();
