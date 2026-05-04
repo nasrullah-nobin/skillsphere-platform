@@ -5,8 +5,9 @@ import Link from "next/link";
 import { Button } from "@heroui/react";
 import { BiCategory } from "react-icons/bi";
 import CourseSearch from "@/Components/CourseSearch";
-
+export const dynamic = 'force-dynamic'
 const AllCourses = async ({searchParams}) => {
+  
   const courses = await getCourses();
   
     const params = await searchParams;
